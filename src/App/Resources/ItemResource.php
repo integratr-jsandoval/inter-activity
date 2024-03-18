@@ -14,7 +14,6 @@ class ItemResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
             'date_created' => Carbon::parse($this->created_at)->format('m/d/Y h:i A'),
-            // 'quantity' => new StockResource($this->whenLoaded('stock')),
             'stock' =>  $this->whenLoaded('stock', fn () => $this->stock()->select('id', 'quantity')->first())
         ];
     }

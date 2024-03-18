@@ -18,12 +18,4 @@ class Stock extends Model
         'item_id',
         'quantity'
     ];
-
-    /**
-     * @return BelongsTo
-     */
-    public function item(): BelongsTo
-    {
-        return $this->belongsTo(Items::class);
-    }
 }

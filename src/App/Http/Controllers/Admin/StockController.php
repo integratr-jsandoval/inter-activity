@@ -16,9 +16,4 @@ class StockController extends Controller
         $stock = $stockServiceContract->store($request->validated());
         return new StockResource($stock);
     }
-
-    public function update()
-    {
-        //
-    }
 }

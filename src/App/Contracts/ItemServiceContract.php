@@ -53,7 +53,7 @@ interface ItemServiceContract
      *
      * @return bool
      */
-    public function update(array $payload, string $itemId): bool;
+    public function update(array $payload, string $itemId): Items;
 
     /**
      * delete

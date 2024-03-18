@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stocks', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('item_id')->index();
-            $table->smallInteger('quantity')->default(0);
+            $table->foreignUuid('author_id');
+            $table->string('name');
+            $table->string('version');
+            $table->string('description');
             $table->timestamps();
 
-            $table->foreign('item_id')
+            $table->foreign('author_id')
                 ->references('id')
-                ->on('items')
+                ->on('authors')
                 ->onDelete('CASCADE');
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('books');
     }
 };

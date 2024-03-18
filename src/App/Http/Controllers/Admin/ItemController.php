@@ -88,7 +88,7 @@ class ItemController extends Controller
         ItemStoreRequest $request,
         string $itemId
     ): ItemResource {
-        $item = $itemServiceContract->store($request->validated(), $itemId);
+        $item = $itemServiceContract->update($request->validated(), $itemId);
         return new ItemResource($item);
     }
 
