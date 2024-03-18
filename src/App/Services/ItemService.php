@@ -52,7 +52,6 @@ class ItemService implements ItemServiceContract
     public function show(string $itemId): Items
     {
         try {
-            // return Items::where('id', $itemId)->with('stock')->first();
             return Items::with('stock')->findOrFail($itemId);
         } catch (ModelNotFoundException $e) {
             throw new ItemNotFoundException($e);
@@ -80,10 +79,11 @@ class ItemService implements ItemServiceContract
      *
      * @return bool
      */
-    public function update(array $payload, string $itemId): bool
+    public function update(array $payload, string $itemId): Items
     {
         $item = $this->findOrFailItem($itemId);
-        return $item->update($payload);
+        $item->update($payload);
+        return $item;
     }
 
     /**
