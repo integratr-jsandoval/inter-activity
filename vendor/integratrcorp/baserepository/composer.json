@@ -1,0 +1,38 @@
+{
+    "name": "integratrcorp/baserepository",
+    "description": "Base Repository Package",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "league/fractal": "^0.20",
+        "illuminate/support": "^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": ">=7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Integratrcorp\\Baserepository\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Integratrcorp\\Baserepository\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Angelo Zamora",
+            "email": "a.zamora@integratrcorp.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Integratrcorp\\Baserepository\\ServiceProvider"
+            ]
+        }
+    }
+}
